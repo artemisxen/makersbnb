@@ -1,28 +1,17 @@
 {
   "name": "makersbnb",
-  "version": "1.0.0",
-  "description": "Makersbnb-team3",
-  "main": "server.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "mocha || true"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chuk-chuk/makersbnb.git"
-  },
-  "keywords": [
-    "nodejs"
-  ],
-  "author": "team3",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chuk-chuk/makersbnb/issues"
-  },
-  "homepage": "https://github.com/chuk-chuk/makersbnb#readme",
   "dependencies": {
-    "chai": "^4.1.1",
-    "ejs": "^2.5.7",
-    "express": "^4.15.4",
-    "mocha": "^3.5.0"
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
   }
 }
