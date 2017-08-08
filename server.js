@@ -7,5 +7,9 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
+app.get('/add-listing', function(req, res) {
+  res.render('pages/add-listing');
+});
+
 app.listen(8080);
 console.log('8080 is listening to the app');
