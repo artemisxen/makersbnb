@@ -1,8 +1,11 @@
-module.exports = {
-  sayHello: function(){
-    return 'Hello';
-  },
-  addNumbers: function(value1, value2){
-    return value1 + value2;
-  }
-};
+var express = require('express');
+var app = express();
+
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res) {
+  res.render('pages/index');
+});
+
+app.listen(8080);
+console.log('8080 is listening to the app');
