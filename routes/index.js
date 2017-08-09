@@ -4,11 +4,13 @@ var models = require('../models');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  models.User.findAll({}).then(function(users){
+  models.User.findAll().then(function(users){
     res.render('pages/index', {
       users: users
     });
+    console.log(users);
   });
+
 });
 
 module.exports = router;
