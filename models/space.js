@@ -10,5 +10,8 @@ module.exports = function(sequelize, DataTypes) {
     imagePath: DataTypes.TEXT
   });
 
+  Space.associate = function(models) {
+    Space.hasMany(models.Avail);
+  }
   return Space;
 };
