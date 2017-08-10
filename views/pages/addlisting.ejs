@@ -1,31 +1,35 @@
 <main>
     <h2>Become a host</h2>
     <p>Create your first property listing</p>
-  <form>
+  <form action="/addlisting" method="post" autocomplete="on">
     <div class="form-group">
       <label for="building">Building Name or Number</label>
-      <input type="text" class="form-control" id="building">
+      <input type="text" class="form-control" name="building" >
     </div>
     <div class="form-group">
       <label for="street">Street</label>
-      <input type="text" class="form-control" id="street">
+      <input type="text" class="form-control" name="street">
     </div>
     <div class="form-group">
       <label for="postcode">Postcode:</label>
-      <input type="text" class="form-control" id="postcode">
+      <input type="text" class="form-control" name="postcode">
     </div>
     <p>Describe your property</p>
     <div class="form-group">
       <label for="title">Listing Title</label>
-      <input type="text" class="form-control" id="title">
+      <input type="text" class="form-control" name="title">
     </div>
     <div class="form-group">
       <label for="description">Summary</label>
-      <textarea class="form-control" rows="5" id="description"></textarea>
+      <textarea class="form-control" rows="5" name="description"></textarea>
     </div>
     <div class="form-group">
       <label for="price">Price per night</label>
-      <input type="text" class="form-control" id="price">
+      <input type="text" class="form-control" name="price">
+    </div>
+    <div class="form-group">
+      <label for="imagePath">Image URL</label>
+      <input type="url" class="form-control" name="imagePath">
     </div>
     <div class="form-group">
       <div class="text-right">
