@@ -1,37 +1,40 @@
-// var assert = require('assert');
-// var Browser = require('zombie');
-//
-// var browser = new Browser();
-//
-// describe("Index Page", function(){
-//     it("contains #content div", function(done){
-//         browser.visit("http://localhost:8000/index.html", function(){
-//             assert.ok(browser.success);
-//             assert.ok(browser.query("#content"));
-//             done();
-//         });
-//     });
-// });
-
 process.env.NODE_ENV = 'test';
-var app = require('server');
-// use zombie.js as headless browser
-var Browser = require('zombie');
+var app = require('../../app');
+var assert = require('assert');
+const Browser = require('zombie');
+const http = require('http').createServer(app).listen(3000);
 
-describe('contact page', function() {
-  before(function() {
-    this.server = http.createServer(app).listen(3000);
-    // initialize the browser using the same port as the test application
-    this.browser = new Browser({ site: 'http://localhost:3000' });
+Browser.localhost('localhost', 3000);
+
+describe('User visits homepage', function() {
+  const browser = new Browser()
+
+  beforeEach (function(done) {
+    browser.visit('/', done);
   });
 
-  // load the contact page
-  before(function(done) {
-    this.browser.visit('/contact', done);
+  describe('/', function() {
+    it('User can see the welcome page', function() {
+      browser.assert.text('title', 'Makersbnb');
+    });
+    it('User can redirect to a new page and book a space', function() {
+      browser.clickLink('Book').then(function() {
+
+
+      assert.equal(browser.text('h1'), 'Book a Space');
+
+    });
   });
+    it('User can redirect to a new page to add a new listing', function() {
+      browser.clickLink('Become a host').then(function() {
+      assert.equal(browser.text('label'), 'Street');
+      });
+    });
+    it('User can visit signup page', function(){
+      browser.clickLink('Sign up').then(function(){
+        assert.equal(browser.text('label'), 'Name');
+      });
+    });
 
-  it('should show contact a form');
-  it('should refuse empty submissions');
-  // ...
-
+  });
 });
