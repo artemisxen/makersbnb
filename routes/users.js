@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var models = require('../models');
 
-/* GET users listing. */
+/* POST new user info */
 router.post('/', function(req, res) {
-  // res.send('respond with a resource');
+  
   models.User.create({
     name: req.body.name,
     username: req.body.username,
