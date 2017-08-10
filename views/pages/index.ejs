@@ -1,15 +1,18 @@
-<div class="jumbotron">
- <h1>Makersbnb</h1>
- <p>Welcome to the homepage!</p>
-
-<% if (users) { %>
- <ul>
-    <% users.forEach(function(user) { %>
-     <li>
-       <%= user.username %>
-     </li>
-    <% }) %>
- </ul>
- <% } %>
-
+<div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="centerme text-center">
+       <h1>makersbnb</h1>
+       <p>Welcome to your next adventure...</p>
+     </div>
+     
+    <% if (users) { %>
+     <ul>
+        <% users.forEach(function(user) { %>
+         <li>
+           <%= user.username %>
+         </li>
+        <% }) %>
+     </ul>
+     <% } %>
+  </div>
 </div>
