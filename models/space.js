@@ -12,6 +12,8 @@ module.exports = function(sequelize, DataTypes) {
 
   Space.associate = function(models) {
     Space.hasMany(models.Avail);
+    Space.hasMany(models.Booking);
+    Space.belongsTo(models.User);
   }
   return Space;
 };

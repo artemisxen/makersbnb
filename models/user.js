@@ -9,5 +9,10 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.TEXT
   });
 
+  User.associate = function(models) {
+    User.hasMany(models.Booking);
+    User.hasMany(models.Space);
+  }
+
   return User;
 };
