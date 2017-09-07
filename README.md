@@ -14,6 +14,8 @@ npm start
 http://localhost:3000/
 ```
 
+![Logo Image](/public/img/logo.png)
+
 ### Technologies used:
 - Node.js
 
